@@ -1,3 +1,14 @@
+-- ----------------------------
+-- Table structure for e_mall_user
+-- ----------------------------
+DROP TABLE IF EXISTS e_mall_user;
+CREATE TABLE e_mall_user (
+  id bigint(20) NOT NULL,
+  username varchar(20) NOT NULL,
+  password varchar(100) NOT NULL,
+  enabled bit(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (id)
+);
 
 DROP TABLE IF EXISTS oauth_client_details;
 CREATE TABLE oauth_client_details (
