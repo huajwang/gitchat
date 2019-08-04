@@ -19,7 +19,7 @@ public class VendorChangeHandler {
 	private static final Logger logger = LoggerFactory.getLogger(
 			VendorChangeHandler.class);
 
-	@StreamListener("inboundOrgChanges")
+	@StreamListener("inboundVendorChanges")
 	public void loggerSink(VendorChangeModel orgChange) {
 		String vid = orgChange.getVendorId();
 		logger.debug("接受到新消息：vendor id {}", vid);
