@@ -1,8 +1,8 @@
 FROM openjdk:8-jdk-alpine
 RUN apk update && apk upgrade && apk add netcat-openbsd
-RUN mkdir -p /usr/local/organizationservice
+RUN mkdir -p /usr/local/vendorservice
 ARG JAR_FILE
-ADD ${JAR_FILE} /usr/local/organizationservice/
+ADD ${JAR_FILE} /usr/local/vendorservice/
 ARG RUN_SH_FILE
 ADD ${RUN_SH_FILE} run.sh
 RUN chmod +x run.sh

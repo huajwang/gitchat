@@ -9,22 +9,20 @@ import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleSourceBean {
+public class MyMessageSource {
+	
     private Source source;
-
-    private static final Logger logger = LoggerFactory.getLogger(SimpleSourceBean.class);
+    private static final Logger logger = LoggerFactory.getLogger(MyMessageSource.class);
 
     @Autowired
-    public SimpleSourceBean(Source source){
+    public MyMessageSource(Source source) {
         this.source = source;
     }
 
-    public void publishVendorChange(String action,String vid) {
+    public void publishVendorChange(String action, String vid) {
        logger.debug("发送 Kafka 消息 {} for Vendor Id: {}", action, vid);
         VendorChangeModel change =  new VendorChangeModel(
-                VendorChangeModel.class.getTypeName(),
-                action,
-                vid);
+                VendorChangeModel.class.getTypeName(), action, vid);
 
         Message<VendorChangeModel> msg = MessageBuilder.withPayload(change).build();
         source.output().send(msg);

@@ -24,14 +24,14 @@ public class VendorServiceController {
     @Autowired
     private VendorService vendorService;
 
-    @RequestMapping(value="/{vendorId}",method = RequestMethod.GET)
+    @RequestMapping(value="/{vendorId}", method = RequestMethod.GET)
     public Vendor getVendor( @PathVariable("vendorId") String vendorId) {
     	logger.info("调用 VendorService 接口根据 vendorId 获取 Vendor 数据");
         return vendorService.getVendor(vendorId);
     }
 
     @RequestMapping(value="/{vendorId}",method = RequestMethod.PUT)
-    public void updateVendor( @PathVariable("vendorId") String orgId, @RequestBody Vendor vendor) {
+    public void updateVendor( @PathVariable("vendorId") String vendorId, @RequestBody Vendor vendor) {
         vendorService.updateVendor(vendor);
     }
 
