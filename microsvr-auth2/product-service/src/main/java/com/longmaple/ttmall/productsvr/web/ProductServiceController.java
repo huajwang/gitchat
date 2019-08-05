@@ -31,7 +31,7 @@ public class ProductServiceController {
     @Autowired
     private VendorClient vendorClient;
 
-    @RequestMapping(value="/",method = RequestMethod.GET)
+    @RequestMapping(value="/", method = RequestMethod.GET)
     public ProductInfo getProducts(@PathVariable("vendorId") String vendorId) {
     	Vendor vendor = vendorClient.getVendor(vendorId);
     	String vendorName = vendor.getName();
@@ -43,15 +43,15 @@ public class ProductServiceController {
         return productInfo;
     }
 
-    @RequestMapping(value="/{productId}",method = RequestMethod.GET)
+    @RequestMapping(value="/{productId}", method = RequestMethod.GET)
     public Product getProducts( @PathVariable("vendorId") String vendorId,
                                 @PathVariable("productId") String productId) {
         return productService.getProduct(vendorId, productId);
     }
 
-    @RequestMapping(value="{productId}",method = RequestMethod.PUT)
+    @RequestMapping(value="{productId}", method = RequestMethod.PUT)
     public String updateProducts( @PathVariable("productId") String productId) {
-        return String.format("put action");
+        return String.format("Put action");
     }
 
     @RequestMapping(value="/",method = RequestMethod.POST)

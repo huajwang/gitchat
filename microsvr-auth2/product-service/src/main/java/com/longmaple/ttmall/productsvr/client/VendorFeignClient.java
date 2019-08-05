@@ -10,9 +10,11 @@ import com.longmaple.ttmall.productsvr.model.Vendor;
 
 @FeignClient("vendorservice")
 public interface VendorFeignClient {
+	
     @RequestMapping(
             method= RequestMethod.GET,
             value="/vendors/{vendorId}",
             consumes="application/json")
     Vendor getVendor(@PathVariable("vendorId") String vendorId);
+    
 }

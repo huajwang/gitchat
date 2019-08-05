@@ -7,7 +7,6 @@ import com.longmaple.ttmall.productsvr.config.ServiceConfig;
 import com.longmaple.ttmall.productsvr.model.Product;
 import com.longmaple.ttmall.productsvr.repository.ProductRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 

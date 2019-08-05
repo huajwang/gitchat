@@ -10,7 +10,8 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "product")
-public class Product{
+public class Product {
+	
 	@Id
 	@Column(name = "product_id", nullable = false)
 	private String productId;

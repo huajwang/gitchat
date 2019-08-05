@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 @Repository
 public class VendorRedisRepositoryImpl implements VendorRedisRepository {
 	
-    private static final String HASH_NAME ="organization";
+    private static final String HASH_NAME = "vendor";
     private RedisTemplate<String, Object> redisTemplate;
     private HashOperations<String, String, Vendor> hashOperations;
 

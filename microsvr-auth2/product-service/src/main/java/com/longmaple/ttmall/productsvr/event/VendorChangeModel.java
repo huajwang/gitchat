@@ -1,6 +1,7 @@
 package com.longmaple.ttmall.productsvr.event;
 
-public class VendorChangeModel{
+public class VendorChangeModel {
+	
     private String type;
     private String action;
     private String vendorId;
