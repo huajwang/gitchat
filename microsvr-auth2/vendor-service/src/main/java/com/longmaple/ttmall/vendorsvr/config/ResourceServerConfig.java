@@ -1,4 +1,4 @@
-package com.longmaple.ttmall.productsvr.config;
+package com.longmaple.ttmall.vendorsvr.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,8 +14,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers("/h2-console/**").permitAll()
-		//.antMatchers("/vendors/**").
-		//.hasRole("ADMIN")
 		.anyRequest()
 		.authenticated()
 		.and().headers().frameOptions().sameOrigin();
