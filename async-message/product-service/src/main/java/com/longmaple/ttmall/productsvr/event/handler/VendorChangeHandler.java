@@ -14,26 +14,26 @@ import com.longmaple.ttmall.productsvr.repository.VendorRedisRepository;
 public class VendorChangeHandler {
 	
 	@Autowired
-	private VendorRedisRepository orgRedisRepo;
+	private VendorRedisRepository vendorRedisRepo;
 	
 	private static final Logger logger = LoggerFactory.getLogger(
 			VendorChangeHandler.class);
 
-	@StreamListener("inboundOrgChanges")
-	public void loggerSink(VendorChangeModel orgChange) {
-		String vid = orgChange.getVendorId();
+	@StreamListener("inboundVendorChanges")
+	public void loggerSink(VendorChangeModel vendorChange) {
+		String vid = vendorChange.getVendorId();
 		logger.debug("接受到新消息：vendor id {}", vid);
-		switch(orgChange.getAction()) {
+		switch(vendorChange.getAction()) {
 		case "UPDATE":
 			logger.debug("接收到来自vendor service的Update事件: {}。从Redis缓存删除该陈旧数据。", vid);
-			orgRedisRepo.deleteVendor(vid);
+			vendorRedisRepo.deleteVendor(vid);
 			break;
 		case "DELETE":
 			logger.debug("接收到来自vendor service的Delete事件: {}。从Redis缓存删除该纪录。", vid);
-			orgRedisRepo.deleteVendor(vid);
+			vendorRedisRepo.deleteVendor(vid);
 			break;
 		default:
-			logger.debug("unsupported action: {}", orgChange.getAction());
+			logger.debug("unsupported action: {}", vendorChange.getAction());
 			break;
 		}
 	}

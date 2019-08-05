@@ -16,7 +16,7 @@ spring:
     stream:
       bindings:
         output:
-            destination:  orgChangeTopic
+            destination:  vendorChangeTopic
             content-type: application/json
       kafka:
         binder:

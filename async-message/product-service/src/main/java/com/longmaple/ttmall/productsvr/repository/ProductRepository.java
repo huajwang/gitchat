@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ProductRepository extends CrudRepository<Product,String>  {
     public List<Product> findByVendorId(String vendorId);
-    public Product findByVendorIdAndProductId(String vendorId,String productId);
+    public Product findByVendorIdAndProductId(String vendorId, String productId);
 }

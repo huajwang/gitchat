@@ -24,10 +24,10 @@ spring:
   cloud:
     stream:
       bindings:
-        inboundOrgChanges:
-          destination: orgChangeTopic
+        inboundVendorChanges:
+          destination: vendorChangeTopic
           content-type: application/json
-          group: licensingGroup
+          group: productGroup
       kafka:
         binder:
           brokers: kafkaserver 

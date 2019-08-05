@@ -16,25 +16,26 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RestController
 @RequestMapping(value="vendors")
 public class VendorServiceController {
+	
     @Autowired
     private VendorService vendorService;
 
-    @RequestMapping(value="/{vendorId}",method = RequestMethod.GET)
+    @RequestMapping(value="/{vendorId}", method = RequestMethod.GET)
     public Vendor getVendor( @PathVariable("vendorId") String vendorId) {
         return vendorService.getVendor(vendorId);
     }
 
-    @RequestMapping(value="/{vendorId}",method = RequestMethod.PUT)
-    public void updateVendor( @PathVariable("vendorId") String orgId, @RequestBody Vendor vendor) {
+    @RequestMapping(value="/{vendorId}", method = RequestMethod.PUT)
+    public void updateVendor( @PathVariable("vendorId") String vendorId, @RequestBody Vendor vendor) {
         vendorService.updateVendor(vendor);
     }
 
-    @RequestMapping(value="/{vendorId}",method = RequestMethod.POST)
+    @RequestMapping(value="/{vendorId}", method = RequestMethod.POST)
     public void saveVendor(@RequestBody Vendor vendor) {
        vendorService.saveVendor(vendor);
     }
 
-    @RequestMapping(value="/{vendorId}",method = RequestMethod.DELETE)
+    @RequestMapping(value="/{vendorId}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteVendor( @PathVariable("vendorId") String vendorId,  @RequestBody Vendor vendor) {
         vendorService.deleteVendor(vendor);
