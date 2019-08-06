@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
 @RequestMapping(value="vendors")
-public class VendorServiceController {
+public class VendorController {
 	
     @Autowired
     private VendorService vendorService;

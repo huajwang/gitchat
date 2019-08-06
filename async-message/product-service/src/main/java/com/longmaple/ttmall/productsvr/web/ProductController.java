@@ -21,9 +21,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value="vendors/{vendorId}/products")
-public class ProductServiceController {
+public class ProductController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(ProductServiceController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
     @Autowired
     private ProductService productService;
