@@ -15,6 +15,10 @@ public class VendorRedisRepositoryImpl implements VendorRedisRepository {
     private static final String HASH_NAME = "vendor";
     private RedisTemplate<String, Object> redisTemplate;
     private HashOperations<String, String, Vendor> hashOperations;
+    
+    public VendorRedisRepositoryImpl() {
+        super();
+    }
 
     @Autowired
     private VendorRedisRepositoryImpl(RedisTemplate<String, Object> redisTemplate) {
