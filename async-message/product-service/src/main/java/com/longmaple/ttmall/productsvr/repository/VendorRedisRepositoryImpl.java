@@ -16,10 +16,6 @@ public class VendorRedisRepositoryImpl implements VendorRedisRepository {
     private RedisTemplate<String, Object> redisTemplate;
     private HashOperations<String, String, Vendor> hashOperations;
 
-    public VendorRedisRepositoryImpl(){
-        super();
-    }
-
     @Autowired
     private VendorRedisRepositoryImpl(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
