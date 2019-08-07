@@ -5,5 +5,5 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface CustomChannels {
 	@Input("inboundVendorChanges")
-	SubscribableChannel orgs();
+	SubscribableChannel vendors();
 }
