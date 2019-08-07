@@ -7,17 +7,17 @@ import org.springframework.stereotype.Component;
 public class ServiceConfig{
 
   @Value("${redis.server}")
-  private String redisServer="";
+  private String redisServer;
 
   @Value("${redis.port}")
-  private String redisPort="";
+  private String redisPort;
 
   public String getRedisServer(){
     return redisServer;
   }
 
   public Integer getRedisPort(){
-    return new Integer( redisPort ).intValue();
+    return Integer.valueOf(redisPort);
   }
 
 }

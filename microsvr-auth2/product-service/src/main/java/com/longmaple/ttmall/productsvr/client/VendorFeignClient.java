@@ -13,7 +13,7 @@ public interface VendorFeignClient {
 	
     @RequestMapping(
             method= RequestMethod.GET,
-            value="/vendors/{vendorId}",
+            value="/vendorsvr/vendors/{vendorId}",
             consumes="application/json")
     Vendor getVendor(@PathVariable("vendorId") String vendorId);
     

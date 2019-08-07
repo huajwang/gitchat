@@ -6,33 +6,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <artifactId>ttmall-parent-pom</artifactId>
   <packaging>pom</packaging>
-
-
   <name>ttmall-parent-pom</name>
   <description>Parent Pom for the ttmall project</description>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.3.RELEASE</version>
-  </parent>
   <modules>
     <module>eurekasvr</module>
     <module>auth-server</module>
     <module>vendor-service</module>
     <module>product-service</module>
   </modules>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>dockerfile-maven-plugin</artifactId>
-        <version>1.4.10</version>
-        <configuration>
-        <baseImage>java</baseImage>
-        <imageName>example</imageName>
-      </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
 </project>

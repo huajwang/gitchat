@@ -1,3 +1,7 @@
+server:
+  servlet:
+    context-path: productsvr
+
 eureka:
   instance:
     preferIpAddress: true

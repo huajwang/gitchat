@@ -16,10 +16,10 @@ import com.longmaple.ttmall.vendorsvr.service.VendorService;
 
 
 @RestController
-@RequestMapping(value="vendors")
-public class VendorServiceController {
+@RequestMapping(value="/vendors")
+public class VendorController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(VendorServiceController.class);
+	private static final Logger logger = LoggerFactory.getLogger(VendorController.class);
 			
     @Autowired
     private VendorService vendorService;
