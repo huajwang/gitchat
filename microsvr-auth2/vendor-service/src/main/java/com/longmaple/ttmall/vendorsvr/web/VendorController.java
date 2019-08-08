@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -24,7 +25,7 @@ public class VendorController {
     @Autowired
     private VendorService vendorService;
 
-    @RequestMapping(value="/{vendorId}", method = RequestMethod.GET)
+    @GetMapping("/{vendorId}")
     public Vendor getVendor( @PathVariable("vendorId") String vendorId) {
     	logger.info("调用 VendorService 接口根据 vendorId 获取 Vendor 数据");
         return vendorService.getVendor(vendorId);

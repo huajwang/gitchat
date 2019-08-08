@@ -38,6 +38,19 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		.authenticationManager(authenticationManager)
 		.userDetailsService(userDetailsService);
 	}
+	
+	private JwtTokenStore tokenStore() {    
+		return new JwtTokenStore(accessTokenConverter());
+	}
+	
+	@Bean
+	public JwtAccessTokenConverter accessTokenConverter() {    
+		JwtAccessTokenConverter converter = new JwtAccessTokenConverter(); 
+		KeyStoreKeyFactory keyStoreKeyFactory = 
+				new KeyStoreKeyFactory(new ClassPathResource("mykeypair.jks"), "123456".toCharArray());
+		converter.setKeyPair(keyStoreKeyFactory.getKeyPair("mykeypair"));
+		return converter;
+	}
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -57,18 +70,4 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		clients.jdbc(dataSource);
 	}
 	
-	@Bean
-	public JwtAccessTokenConverter accessTokenConverter() {    
-		JwtAccessTokenConverter converter = new JwtAccessTokenConverter(); 
-		KeyStoreKeyFactory keyStoreKeyFactory = 
-				new KeyStoreKeyFactory(new ClassPathResource("mykeypair.jks"), "123456".toCharArray());
-		converter.setKeyPair(keyStoreKeyFactory.getKeyPair("mykeypair"));
-		return converter;
-	}
-
-	private JwtTokenStore tokenStore() {    
-		return new JwtTokenStore(accessTokenConverter());
-
-	}	
-
 }

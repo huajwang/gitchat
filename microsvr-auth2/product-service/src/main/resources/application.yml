@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: productsvr
+    context-path: /productsvr
 
 eureka:
   instance:
