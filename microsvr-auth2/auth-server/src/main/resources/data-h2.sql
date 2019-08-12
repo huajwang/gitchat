@@ -36,5 +36,6 @@ INSERT INTO e_mall_user VALUES ('2', 'stanley', '$2a$04$RjTLMr55Rhff8km5ekv/KOwJ
 -- ----------------------------
 -- Records of oauth_client_details clientapp - abcd1234
 -- ----------------------------
-INSERT INTO `oauth_client_details` VALUES ('clientapp', null, '$2a$04$zwL.1agunodQhXUk90nTWeNZysX2hhSp4Z2AEdHi4hCpzk7MwYWqK', 'user:profile:read,user:profile:write', 'authorization_code,password', 'http://localhost:9002/callback', null, '3600', '-1', null, 'false');
+INSERT INTO `oauth_client_details` VALUES ('clientapp', null, '$2a$04$zwL.1agunodQhXUk90nTWeNZysX2hhSp4Z2AEdHi4hCpzk7MwYWqK', 'user:profile:read,user:profile:write', 'password', 'http://localhost:9002/callback', null, '3600', '-1', null, 'false');
+INSERT INTO `oauth_client_details` VALUES ('webapp', null, '$2a$04$zwL.1agunodQhXUk90nTWeNZysX2hhSp4Z2AEdHi4hCpzk7MwYWqK', 'user:profile:read,user:profile:write', 'authorization_code,password,refresh_token', 'http://localhost:9002/callback', null, '3600', '-1', null, 'false');
 
